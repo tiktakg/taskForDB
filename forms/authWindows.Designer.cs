@@ -40,25 +40,28 @@
             login_textBox.Size = new Size(223, 23);
             login_textBox.TabIndex = 0;
             login_textBox.Text = "Введите логин";
-            login_textBox.TextChanged += login_textBox_TextChanged;
+            login_textBox.Enter += login_textBox_Enter;
+            login_textBox.Leave += login_textBox_Leave;
             // 
             // password_textBox
             // 
-            password_textBox.Location = new Point(311, 36);
+            password_textBox.Location = new Point(303, 36);
             password_textBox.Name = "password_textBox";
             password_textBox.Size = new Size(223, 23);
             password_textBox.TabIndex = 1;
             password_textBox.Text = "Введите пароль";
-            password_textBox.TextChanged += password_textBox_TextChanged;
+            password_textBox.Enter += password_textBox_Enter;
+            password_textBox.Leave += password_textBox_Leave;
             // 
             // auth_button
             // 
-            auth_button.Location = new Point(35, 118);
+            auth_button.Location = new Point(35, 114);
             auth_button.Name = "auth_button";
             auth_button.Size = new Size(119, 43);
             auth_button.TabIndex = 2;
             auth_button.Text = "Войти";
             auth_button.UseVisualStyleBackColor = true;
+            auth_button.Click += auth_button_Click;
             // 
             // authWindow
             // 

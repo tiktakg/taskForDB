@@ -12,7 +12,7 @@ namespace taskForDB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=TikTakM;Initial Catalog=Bonten;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=TikTak;Initial Catalog=Bonten;Integrated Security=True;Trust Server Certificate=True");
         }
     }
 
@@ -26,7 +26,7 @@ namespace taskForDB
         public int number_passengers { get; set; }
         public float max_baggage { get; set; }
         public float price { get; set; }
-        public Bitmap foto { get; set; }
+        public string foto { get; set; }
 
     }
 
@@ -45,7 +45,7 @@ namespace taskForDB
     public class User
     {
         [Key]
-        public int id { get; set; }
+        public int id_users { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
