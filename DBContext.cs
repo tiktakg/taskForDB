@@ -21,13 +21,23 @@ namespace taskForDB
         [Key]
         public int id_models { get; set; }
         public string name { get; set; }
-        public string max_time { get; set; }
+        public double max_time { get; set; }
         public int speed { get; set; }
         public int number_passengers { get; set; }
-        public float max_baggage { get; set; }
-        public float price { get; set; }
+        public double max_baggage { get; set; }
+        public double price { get; set; }
         public string foto { get; set; }
 
+        //public Models(string name, float max_time, int speed, int number_passengers, float max_baggage, float price, string foto)
+        //{
+        //    this.name = name;
+        //    this.max_time = max_time;
+        //    this.speed = speed;
+        //    this.number_passengers = number_passengers;
+        //    this.max_baggage = max_baggage;
+        //    this.price = price;
+        //    this.foto = foto;
+        //}
     }
 
     public class Orders

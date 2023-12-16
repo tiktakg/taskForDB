@@ -21,9 +21,12 @@ namespace taskForDB
         {
             if (login_textBox.Text != "Введите логин" & password_textBox.Text != "Введите пароль")
             {
-                if (takeDataFromDb())
+                int idOfUser = takeDataFromDb();
+                if (idOfUser >= 0)
                 {
                     MainWindow mainWindow = new MainWindow();
+                    mainWindow.idOfUser = idOfUser;
+
                     mainWindow.Show();
                     this.Hide();
                 }
@@ -34,6 +37,22 @@ namespace taskForDB
             else
                 MessageBox.Show("Введите логин и пароль", "Ошибка!");
         }
+
+        private int takeDataFromDb()
+        {
+            using (DBContext DB = new DBContext())
+            {
+                var allUsers = DB.user.ToList();
+
+                foreach (var user in allUsers)
+                    if (user.login == login_textBox.Text & user.password == password_textBox.Text)
+                        return user.id_users;
+            }
+
+            return -1;
+        }
+
+        #region get and lost focus of text box
 
         private void login_textBox_Enter(object sender, EventArgs e)
         {
@@ -58,19 +77,6 @@ namespace taskForDB
             if (password_textBox.Text == "")
                 password_textBox.Text = "Введите пароль";
         }
-
-        private bool takeDataFromDb()
-        {
-            using(DBContext DB = new DBContext()) 
-            {
-                var allUsers = DB.user.ToList();
-
-                foreach (var user in allUsers)
-                    if (user.login == login_textBox.Text & user.password == password_textBox.Text)
-                        return true;
-            }
-
-            return false;
-        }
+        #endregion
     }
 }
