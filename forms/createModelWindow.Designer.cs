@@ -51,6 +51,9 @@
             // 
             // nameOfModel_textBox
             // 
+            nameOfModel_textBox.BackColor = SystemColors.InactiveBorder;
+            nameOfModel_textBox.BorderStyle = BorderStyle.FixedSingle;
+            nameOfModel_textBox.ForeColor = SystemColors.WindowText;
             nameOfModel_textBox.Location = new Point(12, 17);
             nameOfModel_textBox.Name = "nameOfModel_textBox";
             nameOfModel_textBox.Size = new Size(170, 23);
@@ -61,6 +64,9 @@
             // 
             // timeOfModel_textBox
             // 
+            timeOfModel_textBox.BackColor = SystemColors.InactiveBorder;
+            timeOfModel_textBox.BorderStyle = BorderStyle.FixedSingle;
+            timeOfModel_textBox.ForeColor = SystemColors.WindowText;
             timeOfModel_textBox.Location = new Point(200, 17);
             timeOfModel_textBox.Name = "timeOfModel_textBox";
             timeOfModel_textBox.Size = new Size(170, 23);
@@ -71,6 +77,9 @@
             // 
             // countPassengers_textBox
             // 
+            countPassengers_textBox.BackColor = SystemColors.InactiveBorder;
+            countPassengers_textBox.BorderStyle = BorderStyle.FixedSingle;
+            countPassengers_textBox.ForeColor = SystemColors.WindowText;
             countPassengers_textBox.Location = new Point(12, 62);
             countPassengers_textBox.Name = "countPassengers_textBox";
             countPassengers_textBox.Size = new Size(170, 23);
@@ -81,6 +90,9 @@
             // 
             // speedOfModel_textBox
             // 
+            speedOfModel_textBox.BackColor = SystemColors.InactiveBorder;
+            speedOfModel_textBox.BorderStyle = BorderStyle.FixedSingle;
+            speedOfModel_textBox.ForeColor = SystemColors.WindowText;
             speedOfModel_textBox.Location = new Point(387, 17);
             speedOfModel_textBox.Name = "speedOfModel_textBox";
             speedOfModel_textBox.Size = new Size(170, 23);
@@ -91,6 +103,9 @@
             // 
             // maxBaggageOfModel_textBox
             // 
+            maxBaggageOfModel_textBox.BackColor = SystemColors.InactiveBorder;
+            maxBaggageOfModel_textBox.BorderStyle = BorderStyle.FixedSingle;
+            maxBaggageOfModel_textBox.ForeColor = SystemColors.WindowText;
             maxBaggageOfModel_textBox.Location = new Point(200, 62);
             maxBaggageOfModel_textBox.Name = "maxBaggageOfModel_textBox";
             maxBaggageOfModel_textBox.Size = new Size(170, 23);
@@ -111,6 +126,9 @@
             // 
             // priceOfModel_textBox
             // 
+            priceOfModel_textBox.BackColor = SystemColors.InactiveBorder;
+            priceOfModel_textBox.BorderStyle = BorderStyle.FixedSingle;
+            priceOfModel_textBox.ForeColor = SystemColors.WindowText;
             priceOfModel_textBox.Location = new Point(387, 62);
             priceOfModel_textBox.Name = "priceOfModel_textBox";
             priceOfModel_textBox.Size = new Size(170, 23);
@@ -125,7 +143,9 @@
             // 
             // createModelWindow
             // 
-            AutoScaleMode = AutoScaleMode.None;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(800, 104);
             Controls.Add(priceOfModel_textBox);
             Controls.Add(addPhoto_button);
@@ -135,8 +155,10 @@
             Controls.Add(timeOfModel_textBox);
             Controls.Add(nameOfModel_textBox);
             Controls.Add(createModel_button);
+            ForeColor = SystemColors.ControlText;
             Name = "createModelWindow";
             Text = "Создание модели";
+            TransparencyKey = Color.White;
             ResumeLayout(false);
             PerformLayout();
         }

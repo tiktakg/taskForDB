@@ -27,17 +27,6 @@ namespace taskForDB
         public double max_baggage { get; set; }
         public double price { get; set; }
         public string foto { get; set; }
-
-        //public Models(string name, float max_time, int speed, int number_passengers, float max_baggage, float price, string foto)
-        //{
-        //    this.name = name;
-        //    this.max_time = max_time;
-        //    this.speed = speed;
-        //    this.number_passengers = number_passengers;
-        //    this.max_baggage = max_baggage;
-        //    this.price = price;
-        //    this.foto = foto;
-        //}
     }
 
     public class Orders
@@ -49,7 +38,7 @@ namespace taskForDB
         public string payment {  get; set; }
         public string status {  get; set; }
         public string comment {  get; set; }
-        public float total_coast {  get; set; }
+        public double total_coast {  get; set; }
     }
 
     public class User

@@ -16,6 +16,9 @@ namespace taskForDB.forms
         {
             InitializeComponent();
             setDataToDataGrid();
+            allModels_dataGrid.Columns["Image"].Width = 220;
+            allModels_dataGrid.RowTemplate.Height = 160;
+
         }
 
         private void back_button_Click(object sender, EventArgs e)
@@ -29,22 +32,36 @@ namespace taskForDB.forms
         {
             createModelWindow createModelWindow = new createModelWindow();
             createModelWindow.ShowDialog();
+            setDataToDataGrid();
+
         }
 
         private Image convertBase64ToImage(string base64String) 
         {
-            Image newImage;
+            int newWidth = 220, newHeight = 160;
             byte[] bytes = Convert.FromBase64String(base64String);
+
+            Image newImage;
+            Bitmap BitMapImage = new Bitmap(newWidth, newHeight);
+
 
             using (MemoryStream ms = new MemoryStream(bytes))
                 newImage = Image.FromStream(ms);
 
-            return newImage;
+           
+
+            using (Graphics g = Graphics.FromImage(BitMapImage))
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(newImage, 0, 0, newWidth, newHeight);
+            }
+
+            return BitMapImage;
         }
 
         private void setDataToDataGrid()
         {
-            List<dataOFModel> listOfModels = new List<dataOFModel>();
+            List<dataAboutModel> listOfModels = new List<dataAboutModel>();
 
             using (DBContext DB = new DBContext())
             {
@@ -52,20 +69,20 @@ namespace taskForDB.forms
 
                 foreach (Models model in allModels)
                 {
-                    dataOFModel newModel = new dataOFModel(model.name, Convert.ToString(model.max_time), 
+                    dataAboutModel newModel = new dataAboutModel(model.name, Convert.ToString(model.max_time),
                         Convert.ToString(model.speed), Convert.ToString(model.number_passengers),
                         Convert.ToString(model.max_baggage), Convert.ToString(model.price), convertBase64ToImage(model.foto));
 
                     listOfModels.Add(newModel);
                 }
             }
-            
-           
-            dataGridView.DataSource = listOfModels;
+
+
+            allModels_dataGrid.DataSource = listOfModels;
         }
     }
 
-    public class dataOFModel
+    public class dataAboutModel
     {
         public string name { get; set; }
         public string maxTime { get; set; }
@@ -75,7 +92,7 @@ namespace taskForDB.forms
         public string price { get; set; }
         public Image image { get; set; }
 
-        public dataOFModel(string name,string maxTime, string speed, string numberOfPassengers, string maxBaggage, string price,Image image)
+        public dataAboutModel(string name,string maxTime, string speed, string numberOfPassengers, string maxBaggage, string price,Image image)
         {
             this.name = name;
             this.maxTime = maxTime;

@@ -30,15 +30,16 @@
         {
             back_button = new Button();
             createModel_button = new Button();
-            dataGridView = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            allModels_dataGrid = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)allModels_dataGrid).BeginInit();
             SuspendLayout();
             // 
             // back_button
             // 
-            back_button.Location = new Point(12, 408);
+            back_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            back_button.Location = new Point(12, 582);
             back_button.Name = "back_button";
-            back_button.Size = new Size(166, 30);
+            back_button.Size = new Size(181, 29);
             back_button.TabIndex = 9;
             back_button.Text = "Назад";
             back_button.UseVisualStyleBackColor = true;
@@ -46,35 +47,36 @@
             // 
             // createModel_button
             // 
-            createModel_button.Location = new Point(622, 408);
+            createModel_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            createModel_button.Location = new Point(691, 582);
             createModel_button.Name = "createModel_button";
-            createModel_button.Size = new Size(166, 30);
+            createModel_button.Size = new Size(181, 29);
             createModel_button.TabIndex = 6;
             createModel_button.Text = "Добавить модель";
             createModel_button.UseVisualStyleBackColor = true;
             createModel_button.Click += createModel_button_Click;
             // 
-            // dataGridView
+            // allModels_dataGrid
             // 
-            dataGridView.AllowUserToOrderColumns = true;
-            dataGridView.BackgroundColor = SystemColors.ControlLight;
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView.Location = new Point(12, 12);
-            dataGridView.Name = "dataGridView";
-            dataGridView.Size = new Size(776, 390);
-            dataGridView.TabIndex = 10;
+            allModels_dataGrid.AllowUserToOrderColumns = true;
+            allModels_dataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            allModels_dataGrid.BackgroundColor = SystemColors.ControlLight;
+            allModels_dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            allModels_dataGrid.Location = new Point(12, 12);
+            allModels_dataGrid.Name = "allModels_dataGrid";
+            allModels_dataGrid.Size = new Size(860, 564);
+            allModels_dataGrid.TabIndex = 10;
             // 
             // directoryOfModelsWindow
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(884, 623);
+            Controls.Add(allModels_dataGrid);
             Controls.Add(back_button);
             Controls.Add(createModel_button);
             Name = "directoryOfModelsWindow";
             Text = "Модели";
-            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)allModels_dataGrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -84,6 +86,6 @@
         private Button settings_button;
         private Button openDirectorys_button;
         private Button createModel_button;
-        private DataGridView dataGridView;
+        private DataGridView allModels_dataGrid;
     }
 }

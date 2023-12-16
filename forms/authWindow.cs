@@ -15,6 +15,8 @@ namespace taskForDB
         public authWindow()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+
         }
 
         private void auth_button_Click(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace taskForDB
                 if (idOfUser >= 0)
                 {
                     MainWindow mainWindow = new MainWindow();
-                    mainWindow.idOfUser = idOfUser;
+                    MainWindow.idOfUser = idOfUser;
 
                     mainWindow.Show();
                     this.Hide();
@@ -54,29 +56,18 @@ namespace taskForDB
 
         #region get and lost focus of text box
 
-        private void login_textBox_Enter(object sender, EventArgs e)
+        private void login_textBox_Enter(object sender, EventArgs e) => updateTextOfTextBox(login_textBox,"Введите логин");
+        private void login_textBox_Leave(object sender, EventArgs e) => updateTextOfTextBox(login_textBox, "Введите логин");
+        private void password_textBox_Enter(object sender, EventArgs e) => updateTextOfTextBox(password_textBox, "Введите пароль");
+        private void password_textBox_Leave(object sender, EventArgs e) => updateTextOfTextBox(password_textBox, "Введите пароль");
+        private void updateTextOfTextBox(TextBox textBox, string textToWrite)
         {
-            if (login_textBox.Text == "Введите логин")
-                login_textBox.Text = "";
+            if (textBox.Text == textToWrite)
+                textBox.Text = "";
+            else if (textBox.Text == "")
+                textBox.Text = textToWrite;
         }
 
-        private void login_textBox_Leave(object sender, EventArgs e)
-        {
-            if (login_textBox.Text == "")
-                login_textBox.Text = "Введите логин";
-        }
-
-        private void password_textBox_Enter(object sender, EventArgs e)
-        {
-            if (password_textBox.Text == "Введите пароль")
-                password_textBox.Text = "";
-        }
-
-        private void password_textBox_Leave(object sender, EventArgs e)
-        {
-            if (password_textBox.Text == "")
-                password_textBox.Text = "Введите пароль";
-        }
         #endregion
     }
 }
