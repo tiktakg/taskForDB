@@ -48,7 +48,7 @@
             // createModel_button
             // 
             createModel_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            createModel_button.Location = new Point(691, 582);
+            createModel_button.Location = new Point(711, 582);
             createModel_button.Name = "createModel_button";
             createModel_button.Size = new Size(181, 29);
             createModel_button.TabIndex = 6;
@@ -64,13 +64,13 @@
             allModels_dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             allModels_dataGrid.Location = new Point(12, 12);
             allModels_dataGrid.Name = "allModels_dataGrid";
-            allModels_dataGrid.Size = new Size(860, 564);
+            allModels_dataGrid.Size = new Size(880, 564);
             allModels_dataGrid.TabIndex = 10;
             // 
             // directoryOfModelsWindow
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(884, 623);
+            ClientSize = new Size(904, 623);
             Controls.Add(allModels_dataGrid);
             Controls.Add(back_button);
             Controls.Add(createModel_button);
